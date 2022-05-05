@@ -1,0 +1,22 @@
+.message {
+  min-width: min-content;
+  padding-top: 6.1em;
+  margin: 0;
+  font-size: 1.375em;
+  line-height: 1.4;
+  text-align: center;
+  color: #808080;
+  background-repeat: no-repeat;
+}
+
+.message_initial {
+  background-image: url("../../icons/glass-icon.svg");
+  background-position: center 0.97em;
+  background-size: 2.9545em;
+}
+
+.message_empty {
+  background-image: url("../../icons/user-icon.svg");
+  background-position: center 0.75em;
+  background-size: 2.9em;
+}

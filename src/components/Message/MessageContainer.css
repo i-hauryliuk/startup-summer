@@ -1,0 +1,12 @@
+.message-container {
+  max-width: 15.25rem;
+  margin: 0 auto;
+}
+
+.message-container_initial {
+  padding: 12.38rem 0 2rem;
+}
+
+.message-container_empty {
+  padding: 13.32rem 0 2rem;
+}
