@@ -1,4 +1,5 @@
 import './Header.css';
+import SearchForm from '../SearchForm/SearchForm';
 
 const Header = () => {
   return (
@@ -13,7 +14,9 @@ const Header = () => {
             height="40"
           />
         </div>
-        <div className="header__search"></div>
+        <div className="header__search">
+          <SearchForm />
+        </div>
       </div>
     </header>
   );

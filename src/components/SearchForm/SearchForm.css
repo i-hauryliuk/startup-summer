@@ -1,0 +1,51 @@
+.search-form {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 2.5em;
+  padding: 0.5em 0.875em;
+  border-radius: 0.375em;
+  background-color: #ffffff;
+}
+
+.search-form:focus-within {
+  outline: 0.0625em solid #d4d8dd;
+  outline-offset: 0.125em;
+}
+
+.search-form::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.375em;
+  background-image: url("../../icons/glass-icon.svg");
+  background-size: 58.33%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.search-form__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 0.875em;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-overflow: ellipsis;
+  color: #000000;
+  background-color: transparent;
+}
+
+.search-form__input::placeholder {
+  letter-spacing: 0.01em;
+  text-overflow: ellipsis;
+  color: #808080;
+  opacity: 1;
+}
+
+.search-form__input:focus {
+  outline: none;
+}
