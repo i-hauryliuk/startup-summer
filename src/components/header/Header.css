@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  background-color: #0064eb;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.0625rem;
+  transform: translateY(50%);
+  background-color: #d4d8dd;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 82.125rem;
+  padding: 1rem 0.9375rem;
+  margin: 0 auto;
+}
+
+.header__logo {
+  flex: 0 0 2.5625rem;
+  margin-right: 1.4rem;
+}
+
+.logo {
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+}
+
+.header__search {
+  flex: 1 1;
+  max-width: 31.25rem;
+  min-width: 4rem;
+}
