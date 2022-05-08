@@ -1,6 +1,7 @@
 import { useDebugValue, useState } from 'react';
 import { getUserData, getUserRepos } from './api/github';
 import Header from './components/Header/Header';
+import User from './components/User/User';
 import Message from './components/Message/Message';
 import './App.css';
 
@@ -55,7 +56,7 @@ const App = () => {
       <main className="main">
         <div className="main__wrapper">
           <div className="main__user-info">
-            {!isLoading && user && <p key={user.id}>{JSON.stringify(user)}</p>}
+            {!isLoading && user && <User userProfile={user} />}
           </div>
           <div className="main__user-repos">
             {!isLoading &&
