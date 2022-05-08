@@ -20,3 +20,9 @@
   background-position: center 0.75em;
   background-size: 2.9em;
 }
+
+.message_norepos {
+  background-image: url("../../icons/norepos-icon.svg");
+  background-position: center 0.75em;
+  background-size: 2.9em;
+}

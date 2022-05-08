@@ -1,7 +1,7 @@
 import './Header.css';
 import SearchForm from '../SearchForm/SearchForm';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -15,7 +15,7 @@ const Header = () => {
           />
         </div>
         <div className="header__search">
-          <SearchForm />
+          <SearchForm onFormSubmit={props.onReceiveQuery} />
         </div>
       </div>
     </header>

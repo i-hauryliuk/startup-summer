@@ -1,9 +1,9 @@
 import './MessageContainer.css';
 
 const Message = (props) => {
-  const mod = `message-container_${props.modifier}`;
+  const mod = props.modifier ? `\u0020message-container_${props.modifier}` : '';
 
-  return <div className={`message-container ${mod}`}>{props.children}</div>;
+  return <div className={`message-container${mod}`}>{props.children}</div>;
 };
 
 export default Message;
