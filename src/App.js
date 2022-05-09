@@ -1,7 +1,8 @@
-import { useDebugValue, useState } from 'react';
+import { useState } from 'react';
 import { getUserData, getUserRepos } from './api/github';
 import Header from './components/Header/Header';
 import User from './components/User/User';
+import Repos from './components/Repos/Repos';
 import Message from './components/Message/Message';
 import './App.css';
 
@@ -59,14 +60,10 @@ const App = () => {
             {!isLoading && user && <User userProfile={user} />}
           </div>
           <div className="main__user-repos">
-            {!isLoading &&
-              user?.repos?.length &&
-              user.repos.map((repo) => (
-                <p key={repo.id}>{JSON.stringify(repo)}</p>
-              ))}
+            {!isLoading && user?.repos?.length && <Repos repos={user.repos} />}
             {!isLoading && messageType && <Message msgType={messageType} />}
-            {isLoading && <p>Loading...</p>}
           </div>
+          {isLoading && <p>Loading...</p>}
         </div>
       </main>
     </div>

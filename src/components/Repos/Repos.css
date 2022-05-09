@@ -1,0 +1,14 @@
+.repos {
+  min-width: 16em;
+  max-width: 54.75em;
+  padding-top: 1.8125em;
+  margin-left: auto;
+  color: #000000;
+}
+
+.repos__heading {
+  margin: 0 0 0.875em;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1.3;
+}
