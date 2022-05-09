@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { getUserData, getUserRepos } from './api/github';
 import Header from './components/Header/Header';
+import UserInfo from './components/UI/UserInfo';
+import UserRepos from './components/UI/UserRepos';
 import User from './components/User/User';
 import Repos from './components/Repos/Repos';
 import Message from './components/Message/Message';
@@ -56,13 +58,18 @@ const App = () => {
       <Header onReceiveQuery={onReceiveQueryHandler} />
       <main className="main">
         <div className="main__wrapper">
-          <div className="main__user-info">
-            {!isLoading && user && <User userProfile={user} />}
-          </div>
-          <div className="main__user-repos">
-            {!isLoading && user?.repos?.length && <Repos repos={user.repos} />}
-            {!isLoading && messageType && <Message msgType={messageType} />}
-          </div>
+          {!isLoading && user && (
+            <UserInfo>{<User userProfile={user} />}</UserInfo>
+          )}
+          {!isLoading && (user?.repos?.length || messageType === 'norepos') && (
+            <UserRepos>
+              {user?.repos?.length && <Repos repos={user.repos} />}
+              {messageType === 'norepos' && <Message msgType={messageType} />}
+            </UserRepos>
+          )}
+          {!isLoading && messageType && messageType !== 'norepos' && (
+            <Message msgType={messageType} />
+          )}
           {isLoading && <p>Loading...</p>}
         </div>
       </main>
