@@ -1,4 +1,3 @@
-import Repos from '../Repos/Repos';
 import './UserRepos.css';
 
 const UserRepos = (props) => {

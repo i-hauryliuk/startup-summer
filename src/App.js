@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { getUserData, getUserRepos } from './api/github';
 import Header from './components/Header/Header';
+import MainContent from './components/UI/MainContent';
 import UserInfo from './components/UI/UserInfo';
 import UserRepos from './components/UI/UserRepos';
 import User from './components/User/User';
 import Repos from './components/Repos/Repos';
 import Message from './components/Message/Message';
-import './App.css';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -56,23 +56,21 @@ const App = () => {
   return (
     <div className="app">
       <Header onReceiveQuery={onReceiveQueryHandler} />
-      <main className="main">
-        <div className="main__wrapper">
-          {!isLoading && user && (
-            <UserInfo>{<User userProfile={user} />}</UserInfo>
-          )}
-          {!isLoading && (user?.repos?.length || messageType === 'norepos') && (
-            <UserRepos>
-              {user?.repos?.length && <Repos repos={user.repos} />}
-              {messageType === 'norepos' && <Message msgType={messageType} />}
-            </UserRepos>
-          )}
-          {!isLoading && messageType && messageType !== 'norepos' && (
-            <Message msgType={messageType} />
-          )}
-          {isLoading && <p>Loading...</p>}
-        </div>
-      </main>
+      <MainContent>
+        {!isLoading && user && (
+          <UserInfo>{<User userProfile={user} />}</UserInfo>
+        )}
+        {!isLoading && (user?.repos?.length || messageType === 'norepos') && (
+          <UserRepos>
+            {user?.repos?.length && <Repos repos={user.repos} />}
+            {messageType === 'norepos' && <Message msgType={messageType} />}
+          </UserRepos>
+        )}
+        {!isLoading && messageType && messageType !== 'norepos' && (
+          <Message msgType={messageType} />
+        )}
+        {isLoading && <p>Loading...</p>}
+      </MainContent>
     </div>
   );
 };
