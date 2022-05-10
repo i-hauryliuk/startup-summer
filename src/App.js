@@ -7,6 +7,7 @@ import UserRepos from './components/UI/UserRepos';
 import User from './components/User/User';
 import Repos from './components/Repos/Repos';
 import Message from './components/Message/Message';
+import Loader from './components/UI/Loader';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -69,7 +70,7 @@ const App = () => {
         {!isLoading && messageType && messageType !== 'norepos' && (
           <Message msgType={messageType} />
         )}
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loader />}
       </MainContent>
     </div>
   );
