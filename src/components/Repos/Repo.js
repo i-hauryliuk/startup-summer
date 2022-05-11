@@ -4,7 +4,12 @@ const Repo = (props) => {
   return (
     <div className="repo">
       <h3 className="repo__title">
-        <a href={props.repo.url} className="repo__link">
+        <a
+          href={props.repo.url}
+          className="repo__link"
+          target="_blank"
+          rel="noreferrer"
+        >
           {props.repo.name}
         </a>
       </h3>

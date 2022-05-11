@@ -20,6 +20,7 @@ const User = (props) => {
         className="user__nick"
         href={props.userProfile.profileUrl}
         target="_blank"
+        rel="noreferrer"
       >
         {props.userProfile.nickName}
       </a>

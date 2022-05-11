@@ -5,7 +5,7 @@ import MainContent from './components/UI/MainContent';
 import UserInfo from './components/UI/UserInfo';
 import UserRepos from './components/UI/UserRepos';
 import User from './components/User/User';
-import Repos from './components/Repos/Repos';
+import PaginatedRepos from './components/Repos/PaginatedRepos';
 import Message from './components/Message/Message';
 import Loader from './components/UI/Loader';
 
@@ -63,7 +63,9 @@ const App = () => {
         )}
         {!isLoading && (user?.repos?.length || messageType === 'norepos') && (
           <UserRepos>
-            {user?.repos?.length && <Repos repos={user.repos} />}
+            {user?.repos?.length && (
+              <PaginatedRepos repos={user.repos} reposPerPage={4} />
+            )}
             {messageType === 'norepos' && <Message msgType={messageType} />}
           </UserRepos>
         )}

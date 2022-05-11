@@ -1,0 +1,102 @@
+.repos {
+  min-width: 16em;
+  max-width: 54.75em;
+  padding: 1.8125em 0;
+  margin-left: auto;
+  color: #000000;
+}
+
+.repos__heading {
+  margin: 0 0 0.875em;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1.3;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.pagination__info {
+  margin: 0 1em 1em 0;
+  font-size: 0.875em;
+  line-height: 1.5;
+  color: #808080;
+}
+
+.page-switcher {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.625em;
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+@media screen and (max-width: 575px) {
+  .page-switcher {
+    gap: 0.3125em;
+  }
+}
+
+.page-switcher__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1.7143em;
+  min-height: 1.7143em;
+  padding: 0.1429em 0.4286em;
+  border-radius: 0.2143em;
+  font: inherit;
+  font-size: 0.875em;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  color: #808080;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+.page-switcher__link_active {
+  background-color: #0064eb;
+  color: #ffffff;
+  cursor: default;
+}
+
+.page-switcher__link:not(.page-switcher__link_active):hover {
+  background-color: #ffffff;
+}
+
+.page-switcher__link_prev {
+  mask-image: url("../../icons/arrow-icon.svg");
+  transform: rotate(180deg);
+  background-color: #808080;
+}
+
+.page-switcher__page_prev.disabled .page-switcher__link_prev {
+  background-color: #c4c4c4;
+  cursor: default;
+}
+.page-switcher__page_prev:not(.disabled) .page-switcher__link_prev:hover {
+  background-color: #0064eb;
+}
+
+.page-switcher__link_next {
+  mask-image: url("../../icons/arrow-icon.svg");
+  background-color: #808080;
+}
+
+.page-switcher__page_next.disabled .page-switcher__link_next {
+  background-color: #c4c4c4;
+  cursor: default;
+}
+
+.page-switcher__page_next:not(.disabled) .page-switcher__link_next:hover {
+  background-color: #0064eb;
+}

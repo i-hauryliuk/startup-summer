@@ -7,3 +7,9 @@
   padding: 0 1.875rem;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 991px) {
+  .main__wrapper {
+    padding: 0 0.9375rem;
+  }
+}
