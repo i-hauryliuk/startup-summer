@@ -10,7 +10,6 @@ const PaginatedRepos = (props) => {
 
   useEffect(() => {
     const endOffset = repoOffset + props.reposPerPage;
-    console.log(`Loading items from ${repoOffset} to ${endOffset}`);
     setCurrentRepos(props.repos.slice(repoOffset, endOffset));
     setPageCount(Math.ceil(props.repos.length / props.reposPerPage));
   }, [repoOffset, props.reposPerPage, props.repos]);
@@ -18,9 +17,6 @@ const PaginatedRepos = (props) => {
   const handlePageClick = (event) => {
     const newOffset =
       (event.selected * props.reposPerPage) % props.repos.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setRepoOffset(newOffset);
   };
 
